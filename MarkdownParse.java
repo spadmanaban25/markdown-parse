@@ -13,17 +13,14 @@ public class MarkdownParse {
         char ImageIndicator='!';
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            int openParen = markdown.indexOf("(", nextCloseBracket);
+            int closeParen = markdown.indexOf(")", openParen);
             if(markdown.charAt(nextOpenBracket-1)==ImageIndicator){
-                int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-                int openParen = markdown.indexOf("(", nextCloseBracket);
-                int closeParen = markdown.indexOf(")", openParen);
                 currentIndex = closeParen + 1;
                 System.out.println(currentIndex);
             }
             else{
-                int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-                int openParen = markdown.indexOf("(", nextCloseBracket);
-                int closeParen = markdown.indexOf(")", openParen);
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
                 System.out.println(currentIndex);
