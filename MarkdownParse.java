@@ -7,6 +7,16 @@ import java.util.ArrayList;
 
 public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
+        /**
+         The implementation of stack data structure was considered because of the extra
+         parantheses showing in the link when asserted into the arraylist and returned.
+         What is advantageous of the stack is that after it receives the link extracted
+         from the markdown substring after indexOf operations applied, it can remove or 
+         pop out any extraneous parantheses that might prompt in the beginning or end of 
+         the link. Due to time, my lab group wasn't able to fully implement the stack,
+         and so this implementation was done by memory models to get a conceptual
+         understanding.
+         */
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then take up to
         // the next )
