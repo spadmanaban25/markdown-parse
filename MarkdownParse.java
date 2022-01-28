@@ -19,6 +19,8 @@ public class MarkdownParse {
                 int closeParen = markdown.indexOf(")", openParen);
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
+            } else {
+                break;
             }
         }
         return toReturn;
@@ -27,6 +29,5 @@ public class MarkdownParse {
 		Path fileName = Path.of(args[0]);
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = getLinks(contents);
-        System.out.println(links);
     }
 }
