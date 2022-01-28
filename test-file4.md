@@ -1,2 +1,2 @@
-[](www.ucsd.edu) 
-[](www.gmail.com)
+(www.ucsd.edu) 
+(www.gmail.com)
