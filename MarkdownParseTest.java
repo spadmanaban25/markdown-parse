@@ -23,5 +23,10 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks(file), 
         List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ","https://www.google.com/maps"));
     }
-    
+    @Test
+    public void testGetLinks3() throws IOException{
+        String file=Files.readString(Path.of("test-file3.md"));
+        assertEquals(MarkdownParse.getLinks(file), 
+        List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+    }
 }
