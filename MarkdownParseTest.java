@@ -29,4 +29,18 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks(file), 
         List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
     }
+    @Test
+    public void testGetLinksBulk() throws IOException{
+        String file=Files.readString(Path.of("test-file4.md"));
+        assertEquals(MarkdownParse.getLinks(file),List.of());
+        file=Files.readString(Path.of("test-file6.md"));
+        assertEquals(MarkdownParse.getLinks(file),List.of());
+        file=Files.readString(Path.of("test-file7.md"));
+        assertEquals(MarkdownParse.getLinks(file),List.of());
+        //tests below are bugged
+        file=Files.readString(Path.of("test-file8.md"));
+        assertEquals(MarkdownParse.getLinks(file),List.of("a link on the first line"));
+        file=Files.readString(Path.of("test-file5.md"));
+        assertEquals(MarkdownParse.getLinks(file),List.of());
+    }
 }
