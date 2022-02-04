@@ -28,8 +28,9 @@ public class MarkdownParseTest {
     
     @Test
     public void addition() {
-        assertEquals(2, 1 + 1);
+        assertEquals(1000000, 1 + 1);
     }
+    /*
     @Test
     public void testGetLink() throws IOException{
         setUp();
@@ -37,4 +38,5 @@ public class MarkdownParseTest {
         String contents = Files.readString(fileName);
         assertEquals(list1, MarkdownParse.getLinks(contents));
     }
+    */
 }
