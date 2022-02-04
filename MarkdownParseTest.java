@@ -16,6 +16,7 @@ public class MarkdownParseTest {
     public void setUp(){
         list1.add("https://something.com");
         list1.add("some-page.html");
+        list1.add("pic.jpg");
         list2.add("https://something.com");
         list2.add("some-page.html");
         list2.add("");
@@ -39,4 +40,12 @@ public class MarkdownParseTest {
         assertEquals(list1, MarkdownParse.getLinks(contents));
     }
     */
+
+    @Test
+    public void testImageFile() throws IOException{
+        setUp();
+        Path fileName = Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\test-file1.md");
+        String contents = Files.readString(fileName);
+        assertEquals(list1, MarkdownParse.getLinks(contents));
+    }
 }
