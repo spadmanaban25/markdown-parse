@@ -43,4 +43,8 @@ public class MarkdownParseTest {
         file=Files.readString(Path.of("test-file5.md"));
         assertEquals(MarkdownParse.getLinks(file),List.of());
     }
+    @Test
+    public void willFail(){
+        assertEquals(1, 1+1);
+    }
 }
