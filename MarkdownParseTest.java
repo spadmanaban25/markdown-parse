@@ -47,10 +47,10 @@ public class MarkdownParseTest {
     public void willFail(){
         assertEquals(1, 1);
     }
-    @Test
-    public void testGetLinksImage2()throws IOException{
-        String file=Files.readString(Path.of("test-file9.md"));
-        assertEquals(MarkdownParse.getLinks(file),List.of("https://something.com",
-        "some-page.html","www.google.com/test"));
-    }
+    //@Test
+    //public void testGetLinksImage2()throws IOException{
+        //String file=Files.readString(Path.of("test-file9.md"));
+        //assertEquals(MarkdownParse.getLinks(file),List.of("https://something.com",
+        //"some-page.html","www.google.com/test"));
+    //}
 }
