@@ -31,21 +31,13 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
-    /*
+    
     @Test
     public void testGetLink() throws IOException{
         setUp();
-        Path fileName = Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\test-file1.md");
+        Path fileName = Path.of("./test-file1.md");
         String contents = Files.readString(fileName);
         assertEquals(list1, MarkdownParse.getLinks(contents));
     }
-    */
-
-    @Test
-    public void testImageFile() throws IOException{
-        setUp();
-        Path fileName = Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\test-file1.md");
-        String contents = Files.readString(fileName);
-        assertEquals(list1, MarkdownParse.getLinks(contents));
-    }
+    
 }
