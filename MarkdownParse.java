@@ -21,41 +21,17 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then take up to
         // the next )
         int currentIndex = 0;
-        char ImageIndicator='!';
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            if(nextOpenBracket==-1||nextCloseBracket==-1||openParen==-1||closeParen==-1
-            ||markdown.charAt(nextCloseBracket+1)!='('){
-                return toReturn;
-            }
-            if(nextOpenBracket==0){
-                if(openParen!=closeParen-1){
-                    toReturn.add(markdown.substring(openParen + 1, closeParen));
-                }
+            if(nextOpenBracket < 0 || nextCloseBracket < 0 || openParen < 0 || closeParen < 0){
+                break;
+            } else {
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
-                System.out.println(currentIndex);
             }
-            else{
-                System.out.println("Reached first else");
-                System.out.println(markdown.charAt(nextOpenBracket-1));
-                if(markdown.charAt(nextOpenBracket-1)==ImageIndicator){
-                    System.out.println("Reached image check");
-                    currentIndex = closeParen + 1;
-                    System.out.println(currentIndex);
-                }
-                else{
-                    if(openParen!=closeParen-1){
-                        toReturn.add(markdown.substring(openParen + 1, closeParen));
-                    }
-                    currentIndex = closeParen + 1;
-                    System.out.println(currentIndex);
-                }
-
-            }
-            
             
         }
         return toReturn;

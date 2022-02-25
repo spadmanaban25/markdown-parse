@@ -12,16 +12,18 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
+    
     @Test
-    public void testGetLinks1() throws IOException{
-        String file=Files.readString(Path.of("test-file1.md"));
-        assertEquals(MarkdownParse.getLinks(file), List.of("https://something.com","some-page.html"));
+    public void testSnippet1() throws IOException{
+        String file = Files.readString(Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\testSnippet1.md"));
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), 
+        MarkdownParse.getLinks(file));
     }
 
-    //@Test
-    //public void testGetLinksImage2()throws IOException{
-        //String file=Files.readString(Path.of("test-file9.md"));
-        //assertEquals(MarkdownParse.getLinks(file),List.of("https://something.com",
-        //"some-page.html","www.google.com/test"));
-    //}
+    @Test 
+    public void testSnippet2() throws IOException{
+        String file = Files.readString(Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\testSnippet2.md"));
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(file));
+    }
+
 }
