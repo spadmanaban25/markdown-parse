@@ -13,10 +13,9 @@ public class MarkdownParseTest {
     }
     
     @Test
-    public void testSnippet1() throws IOException{
-        String file = Files.readString(Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\testSnippet1.md"));
-        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), 
-        MarkdownParse.getLinks(file));
+    public void testGetLinks1() throws IOException{
+        String file = Files.readString(Path.of("test-file.md"));
+        assertEquals(MarkdownParse.getLinks(file), List.of("https://something.com","some-page.html"));
     }
 
     @Test 
