@@ -26,4 +26,11 @@ public class MarkdownParseTest {
         assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(file));
     }
 
+    @Test
+    public void testSnippet3() throws IOException{
+        String file = Files.readString(Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\testSnippet3.md"));
+        assertEquals(List.of("www.twitter.com"),
+        MarkdownParse.getLinks(file));
+    }
+
 }
