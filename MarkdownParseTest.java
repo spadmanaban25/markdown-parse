@@ -3,7 +3,7 @@ import org.junit.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
+import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -29,8 +29,7 @@ public class MarkdownParseTest {
     @Test
     public void testSnippet3() throws IOException{
         String file = Files.readString(Path.of("C:\\Users\\padsp\\Documents\\GitHub\\markdown-parse\\testSnippet3.md"));
-        assertEquals(List.of("www.twitter.com"),
-        MarkdownParse.getLinks(file));
+        assertEquals(List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/", "https://cse.ucsd.edu/"), MarkdownParse.getLinks(file));
     }
 
 }
